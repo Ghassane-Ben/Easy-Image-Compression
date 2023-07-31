@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>Image Compression</title>
+   <style>
+      body {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+         height: 100vh;
+         margin: 0;
+         font-family: Arial, sans-serif;
+         background-color: #f5f5f5;
+      }
+      
+      .container {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         background-color: #ffffff;
+         padding: 40px;
+         border-radius: 8px;
+         box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      
+      .button-container {
+         display: flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap: 10px;
+         margin-top: 20px;
+      }
+      
+      .container .input-field {
+         width: 75%; /* Set the width to 100% to make both input fields the same size */
+         margin: 10px;
+         padding: 12px;
+         border: none;
+         border-radius: 4px;
+         font-size: 16px;
+         box-sizing: border-box;
+         box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .title {
+         text-align: center;
+         color: #333333;
+         margin-bottom: 20px;
+         font-size: 24px;
+      }
+      
+      .center-button {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+      }
+      
+      .button-container button {
+         padding: 12px 24px;
+         background-color: #4caf50;
+         color: #ffffff;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+         font-size: 16px;
+         transition: background-color 0.3s ease;
+      }
+      
+      .button-container button:hover {
+         background-color: #45a049;
+      }
+      
+      .description {
+         text-align: center;
+         color: #777777;
+         margin: 20px;
+         font-size: 16px;
+         margin-left: 300px;
+         margin-right: 300px;
+      }
+      
+      @media (min-width: 600px) {
+         .container {
+            flex-direction: row;
+            align-items: center;
+            padding: 60px;
+         }
+         
+         .container .input-field {
+            margin: 10px;
+         }
+         
+         .title {
+            font-size: 28px;
+         }
+         
+         .button-container button {
+            padding: 14px 28px;
+            font-size: 18px;
+         }
+      }
+   </style>
+</head>
+<body>
+   <div class="title">
+      <h1>Easy Image Compression</h1>
+   </div>
+   <div class="container">
+      <div class="button-container">
+         <form id="compressForm" method="POST" action="/compress" enctype="multipart/form-data">
+            <input type="file" name="image" id="imageUpload" class="input-field" accept="image/*" placeholder="Choose Image">
+            <input type="number" name="compressionPercentage" id="compressionPercentage" class="input-field" placeholder="Compression Percentage">
+         </form>
+      </div>
+      <div class="button-container">
+         <button type="submit" form="compressForm">Compress Image</button>
+      </div>
+   </div>
+   <div class="description">
+      <p>Compress your images effortlessly by setting a compression percentage. This value determines the compression quality, meaning how much quality you will remove from the image. Higher input values will imply higher quality reduction and consequently size reduction. Simply choose an image, set the compression percentage, and click the "Compress Image" button. Optimize your images now!</p>
+   </div>
+</body>
+</html>
